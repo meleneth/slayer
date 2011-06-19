@@ -6,7 +6,7 @@ noinst_LIBRARIES = libs/libglpng.a
 AM_CXXFLAGS = -Wall -D_REENTRANT -g -pg
 AM_CFLAGS = @GL_CFLAGS@
 
-bin_slayer_SOURCES = src/slayer.cpp
+bin_slayer_SOURCES = src/slayer.cpp libs/glpng.a
 bin_slayert_SOURCES = src/slayert.cpp
 
 libs_libglpng_a_SOURCES = libs/glpng/adler32.c \
@@ -14,7 +14,7 @@ libs_libglpng_a_SOURCES = libs/glpng/adler32.c \
     libs/glpng/inffast.h \
     libs/glpng/inftrees.h \
     libs/glpng/png.h \
-    libs/glpng/pngmem.c
+    libs/glpng/pngmem.c \
     libs/glpng/pngrtran.c \
     libs/glpng/zconf.h \
     libs/glpng/crc32.c \
