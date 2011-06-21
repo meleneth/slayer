@@ -3,7 +3,7 @@ ACLOCAL_AMFLAGS = -I m4
 noinst_PROGRAMS = bin/slayer bin/slayert
 noinst_LIBRARIES = libs/libglpng.a libs/libengine.a
 
-AM_CXXFLAGS = -Wall -D_REENTRANT -g -pg @SDL_CFLAGS@ -Ilibs/glpng
+AM_CXXFLAGS = -Wall -D_REENTRANT -g -pg @SDL_CFLAGS@ -I$(srcdir)/libs/glpng
 AM_CFLAGS = @GL_CFLAGS@
 
 bin_slayer_SOURCES = src/slayer.cpp libs/libglpng.a libs/libengine.a
@@ -54,14 +54,9 @@ libs_libengine_a_SOURCES = src/engine/area.cpp \
     src/engine/engine.hpp \
     src/engine/entity.cpp \
     src/engine/entity.hpp \
-    src/engine/entity.i \
     src/engine/entitymgr.cpp \
     src/engine/entitymgr.hpp \
-    src/engine/file_list.txt \
     src/engine/globals.hpp \
-    src/engine/Makefile \
-    src/engine/Makefile.am \
-    src/engine/Makefile.in \
     src/engine/map_defines.hpp \
     src/engine/netclient.cpp \
     src/engine/netclient.hpp \
