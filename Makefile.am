@@ -3,11 +3,11 @@ ACLOCAL_AMFLAGS = -I m4
 noinst_PROGRAMS = bin/slayer bin/slayert
 noinst_LIBRARIES = libs/libglpng.a libs/libengine.a
 
-AM_CXXFLAGS = -Wall -D_REENTRANT -g -pg @SDL_CFLAGS@ -I$(srcdir)/libs/glpng -I$(srcdir)/src/engine
+AM_CXXFLAGS = -Wall -D_REENTRANT -g -pg @SDL_CFLAGS@ -I$(srcdir)/libs/glpng -I$(srcdir)/src/engine -I/usr/include/lua5.1
 AM_CFLAGS = @GL_CFLAGS@
 
 bin_slayer_SOURCES = src/slayer.cpp
-bin_slayer_LDADD = libs/libengine.a libs/libglpng.a @GL_LIBS@ @CURSES_LIB@ @SDL_LIBS@
+bin_slayer_LDADD = libs/libengine.a libs/libglpng.a @GL_LIBS@ @CURSES_LIB@ @SDL_LIBS@ -llua5.1
 bin_slayert_SOURCES = src/slayert.cpp libs/libglpng.a libs/libengine.a
 
 libs_libglpng_a_SOURCES = libs/glpng/adler32.c \
