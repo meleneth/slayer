@@ -1,9 +1,17 @@
 #include<iostream>
 
+#include<entitymgr.hpp>
+#include<console.hpp>
+
 using namespace std;
+
+Console *console;
 
 int main(int argc, char *argv[])
 {
-    cout << "Slayer 1.0"  << endl;
-    return 0;
+  console = new Console();
+  EntityMgr *stuff = new EntityMgr();
+  cout << "Slayer 1.0"  << endl;
+  
+  return 0;
 }
