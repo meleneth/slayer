@@ -8,7 +8,10 @@ AM_CFLAGS = @GL_CFLAGS@
 
 bin_slayer_SOURCES = src/slayer.cpp
 bin_slayer_LDADD = libs/libengine.a libs/libglpng.a @GL_LIBS@ @CURSES_LIB@ @SDL_LIBS@ -llua5.1
-bin_slayert_SOURCES = src/slayert.cpp libs/libglpng.a libs/libengine.a
+bin_slayert_SOURCES = src/slayert.cpp libs/libglpng.a libs/libengine.a src/slayer_wrap.cpp
+
+#src/entity_wrap.cpp : src/entity_wrap.i
+#    swig -c++ -lua src/entity.i
 
 libs_libglpng_a_SOURCES = libs/glpng/adler32.c \
     libs/glpng/infblock.h \
