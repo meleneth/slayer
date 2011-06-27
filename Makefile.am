@@ -59,14 +59,6 @@ libs_libengine_a_SOURCES = src/engine/area.cpp \
     src/engine/entitymgr.hpp \
     src/engine/globals.hpp \
     src/engine/map_defines.hpp \
-    src/engine/netclient.cpp \
-    src/engine/netclient.hpp \
-    src/engine/netpacket.cpp \
-    src/engine/netpacket.hpp \
-    src/engine/netserverclient.cpp \
-    src/engine/netserverclient.hpp \
-    src/engine/netserver.cpp \
-    src/engine/netserver.hpp \
     src/engine/particles.cpp \
     src/engine/particles.hpp \
     src/engine/physics.cpp \
@@ -89,8 +81,6 @@ libs_libengine_a_SOURCES = src/engine/area.cpp \
     src/engine/timer.cpp \
     src/engine/timer.hpp \
     src/engine/types.hpp \
-    src/engine/udpsocket.cpp \
-    src/engine/udpsocket.hpp \
     src/engine/util.cpp \
     src/engine/vector.cpp \
     src/engine/vector.hpp \

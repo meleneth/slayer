@@ -5,7 +5,6 @@
 #include"SDL.h"
 #include"texture.hpp"
 #include"vector.hpp"
-#include"netpacket.hpp"
 #include"globals.hpp"
 #include"weapon.hpp"
 
@@ -22,33 +21,6 @@ enum ENT_TYPE { ENT_ASTEROID, ENT_PLAYER, ENT_PLAYERSHOT };
 #define ENTID_TYPE Uint32
 
 #define ALIGNMENT_ASTEROID 1
-
-typedef struct {
-        NetCmd cmd;
-        ENTID_TYPE entID;
-} EntCmd;
-
-typedef struct {
-        NetCmd cmd;
-        ENTID_TYPE entID;
-        Uint32 x;
-        Uint32 y;
-        Uint32 angle;
-        Uint32 power;
-        Uint32 rotation;
-} EntLoc;
-
-typedef struct {
-        NetCmd cmd;
-        ENTID_TYPE entID;
-        Uint32 x;
-        Uint32 y;
-        Uint32 angle;
-        Uint32 power;
-        unsigned char size;
-        Uint32 rotation;
-        Uint32 textureID;
-} EntFull;
 
 class Weapon;
 class Entity {
@@ -96,12 +68,6 @@ class Entity {
         virtual void log_info(void);
         void move(Sint32 xdir, Sint32 ydir);
 
-        void inflateLoc(EntLoc *newLoc);
-        void inflateFull(EntFull *newFull);
-        void deflateLoc(EntLoc *currentLoc);
-        void deflateFull(EntFull *currentFull);
-		
-		
     private:
         // Private members go here.
 
