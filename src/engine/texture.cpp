@@ -126,7 +126,7 @@ Texture *get_tex_id(TileNum tile_id)
         }
     }
     console->fatal("could not find texture in get_tex_id");
-
+    return NULL;
 }
 // Private members go here.
 

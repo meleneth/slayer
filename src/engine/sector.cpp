@@ -2,13 +2,8 @@
 #include "globals.hpp"
 #include "asteroid.hpp"
 #include "entity.hpp"
-#include "netpacket.hpp"
-#include "netserver.hpp"
-#include "udpsocket.hpp"
 #include "area.hpp"
 #include<sstream>
-
-extern NetServer *server;
 
 #define SECTOR_SIDE 90000
 
@@ -55,6 +50,7 @@ Entity *Sector::setup_connecting(void)
 	ship->sector = this;
     ship->ent_id = 31337;
     add_entity(ship);
+    return ship;
 }
 
 

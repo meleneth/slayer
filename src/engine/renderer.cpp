@@ -22,8 +22,6 @@ Renderer::~Renderer()		// Destructor
 
 int Renderer::RenderFrame(Camera *camera)
 {
-    static int reticle_angle = 0;
-
     ClearScreen();
     
     glColor4f(1, 1, 1, 1);

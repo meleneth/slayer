@@ -3,7 +3,6 @@
 
 #include"SDL.h"
 #include"entitymgr.hpp"
-#include"netserverclient.hpp"
 #include<string>
 #include"area.hpp"
 

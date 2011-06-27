@@ -46,7 +46,6 @@ void ParticleSystem::frameupdate(void)
 void ParticleSystem::render(void)
 {
 
-    Uint16 particlenum;
     std::list < Particle * >::iterator i;
     Particle *p;    
     glLoadIdentity();

@@ -102,7 +102,6 @@ Entity *EntityMgr::find_ent_for_id(Uint32 id)
 {
     std::stringstream buf;
     std::list < Entity * >::iterator i;
-    Entity *newEnt;
 
     for (i = entities.begin (); i != entities.end (); ++i) {
         if ((*i)->ent_id == id) return *i;
