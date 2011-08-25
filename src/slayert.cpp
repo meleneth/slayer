@@ -5,7 +5,6 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
-
 #include<entitymgr.hpp>
 #include<console.hpp>
 
@@ -16,25 +15,36 @@ Console *console;
 void do_lua_stuff();
 static void openlualibs(lua_State *l);
 
+void test_pass_entity_to_lua();
+
+extern "C" {
+  int luaopen_Slayer(lua_State* L);
+};
+
 int main(int argc, char *argv[])
 {
   console = new Console();
+  console->print_logs = true;
+
+  cout << "Slayer test suite 1.0"  << endl;
+
   EntityMgr *stuff = new EntityMgr();
 
   do_lua_stuff();
 
-  cout << "Slayer 1.0"  << endl;
-   
+  test_pass_entity_to_lua();
+  //test_pass_entity_to_c_from_lua();
+  //test_add_lua_created_entity_to_entitymgr();
+
   delete stuff;
   delete console;
   return 0;
-    cout << "Slayer test suite 1.0"  << endl;
-    return 0;
 }
 
 static const luaL_reg lualibs[] =
 {
   { "base",       luaopen_base },
+  { "Slayer",     luaopen_Slayer },
   { NULL,         NULL }
 };
 
@@ -71,4 +81,12 @@ void do_lua_stuff()
   /* Remember to destroy the Lua State */
   lua_close(l);
   
+}
+
+void test_pass_entity_to_lua()
+{
+  Entity *e = new Entity();
+  e->v->x = 30;
+  e->v->y = 40;
+  delete e;
 }

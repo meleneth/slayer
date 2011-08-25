@@ -47,7 +47,6 @@ class Entity {
         Entity(); // Constructor
 
         void setup_entity(void);
-        void add_timed_event(int time_offset, void *function, Entity *who_is_acting);
         virtual ~Entity(); // Destructor
 
         virtual int frameupdate(void);

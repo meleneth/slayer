@@ -1,4 +1,4 @@
-%module Entity
+%module Slayer
 %{
 /* Includes the header in the wrapper code */
 #include "entity.hpp"
