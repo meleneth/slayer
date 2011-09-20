@@ -2851,7 +2851,18 @@ ac_config_headers="$ac_config_headers config.h"
 
 
 
-#AM_SILENT_RULES([yes])
+# Check whether --enable-silent-rules was given.
+if test "${enable_silent_rules+set}" = set; then :
+  enableval=$enable_silent_rules;
+fi
+
+case $enable_silent_rules in
+yes) AM_DEFAULT_VERBOSITY=0;;
+no)  AM_DEFAULT_VERBOSITY=1;;
+*)   AM_DEFAULT_VERBOSITY=0;;
+esac
+AM_BACKSLASH='\'
+
 
 
 
