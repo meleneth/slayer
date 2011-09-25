@@ -15,10 +15,13 @@ Console *console;
 void do_lua_stuff();
 
 void test_pass_entity_to_lua();
+void run_test_script(string script_filename);
 
 extern "C" {
   int luaopen_Slayer(lua_State* L);
 };
+
+string script_base;
 
 int main(int argc, char *argv[])
 {
@@ -30,15 +33,41 @@ int main(int argc, char *argv[])
 
   EntityMgr *stuff = new EntityMgr();
 
-  do_lua_stuff();
+  script_base = argv[0];
+  int last_slash = script_base.rfind("/");
+  if(last_slash) {
+    script_base.erase(last_slash);
+  }
 
-  test_pass_entity_to_lua();
+  script_base = script_base + "/scripts/test";
+
+  cout << "Script base: " << script_base << endl;
+  
+  run_test_script("basic.lua");
+
+  //test_pass_entity_to_lua();
   //test_pass_entity_to_c_from_lua();
   //test_add_lua_created_entity_to_entitymgr();
 
   delete stuff;
   delete console;
   return 0;
+}
+
+void run_test_script(string script_filename)
+{
+  string script_fullfilename = script_base + "/" + script_filename;
+  lua_State *l;
+  l = lua_open();
+  luaopen_base(l);
+  luaopen_Slayer(l);
+
+  if (luaL_dofile(l, script_fullfilename.c_str()))
+  {
+    console->log(lua_tostring(l, -1));
+  }
+
+  lua_close(l);
 }
 
 
@@ -55,6 +84,8 @@ void do_lua_stuff()
   /* In the lines below, I load and run the Lua code contained in the file */
   /* "script.lua". */
   /* Plus print some text directly from C. */
+
+
   printf("This line in directly from C\n\n");
   if (luaL_dofile(l, "script.lua"))
   {

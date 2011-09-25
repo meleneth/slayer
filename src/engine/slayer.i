@@ -15,4 +15,4 @@
 %include "sector.hpp"
 %include "console.hpp"
 %include "globals.hpp"
-
+%include "vector.hpp"

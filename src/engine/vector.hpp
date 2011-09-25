@@ -21,7 +21,6 @@ class Vector {
         void aim(Vector *target);
         void update_location(void);
         void set_from(Vector *v);
-        void bounds_check(Area *boundary);
         void accelerate(Vector *v);
         void follow(Vector *v, double leash_length);
         void random_location(double x1, double y1, double x2, double y2);
