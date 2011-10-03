@@ -13,6 +13,8 @@ bin_slayer_LDADD = libs/libengine.a libs/libglpng.a @GL_LIBS@ @CURSES_LIB@ @SDL_
 bin_slayert_LDADD = libs/libengine.a libs/libglpng.a @GL_LIBS@ @CURSES_LIB@ @SDL_LIBS@ -llua5.1
 bin_slayert_SOURCES = src/slayert.cpp 
 
+CLEANFILES = src/engine/fuego_wrap.cxx
+
 src/engine/fuego_wrap.cxx : src/engine/fuego.i src/engine/entity.hpp src/engine/entitymgr.hpp src/engine/sector.hpp src/engine/console.hpp src/engine/globals.hpp src/engine/slayer.hpp
 	swig -c++ -lua -o src/engine/fuego_wrap.cxx src/engine/fuego.i
 
