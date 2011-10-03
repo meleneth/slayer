@@ -18,7 +18,7 @@ void test_pass_entity_to_lua();
 void run_test_script(string script_filename);
 
 extern "C" {
-  int luaopen_Slayer(lua_State* L);
+  int luaopen_Fuego(lua_State* L);
 };
 
 string script_base;
@@ -60,7 +60,7 @@ void run_test_script(string script_filename)
   lua_State *l;
   l = lua_open();
   luaopen_base(l);
-  luaopen_Slayer(l);
+  luaopen_Fuego(l);
 
   if (luaL_dofile(l, script_fullfilename.c_str()))
   {
@@ -77,7 +77,7 @@ void do_lua_stuff()
   lua_State *l;
   l = lua_open();
   luaopen_base(l);
-  luaopen_Slayer(l);
+  luaopen_Fuego(l);
   
   /* You can do what you want here. Note: Remember to update the libraries used (see above) */
   /* if you add to your program and use new Lua libraries. */

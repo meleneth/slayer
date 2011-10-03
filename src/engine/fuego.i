@@ -1,4 +1,4 @@
-%module Slayer
+%module Fuego
 %{
 /* Includes the header in the wrapper code */
 #include "entity.hpp"
@@ -6,6 +6,7 @@
 #include "sector.hpp"
 #include "console.hpp"
 #include "globals.hpp"
+#include "slayer.hpp"
 %}
 
 /* Parse the header file to generate wrappers */
@@ -16,3 +17,5 @@
 %include "console.hpp"
 %include "globals.hpp"
 %include "vector.hpp"
+%include "slayer.hpp"
+
