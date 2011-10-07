@@ -4,6 +4,7 @@
 #include<console.hpp>
 #include<video.hpp>
 #include<slayer.hpp>
+#include<path_resolver.hpp>
 
 using namespace std;
 
@@ -19,7 +20,10 @@ int main(int argc, char *argv[])
   video = new Video(1024, 768);
 
   slayer = new Slayer();
+  slayer->path_resolver = new PathResolver(argv[0]);
   slayer->main_loop();
+
+  delete slayer;
 
   delete video;
   delete console;

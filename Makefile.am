@@ -101,6 +101,8 @@ libs_libengine_a_SOURCES = src/engine/area.cpp \
     src/engine/w_plasmacannon.hpp \
     src/engine/fuego_wrap.cxx \
     src/engine/slayer.cpp \
-    src/engine/slayer.hpp
+    src/engine/slayer.hpp \
+    src/engine/path_resolver.hpp \
+    src/engine/path_resolver.cpp
 
 
