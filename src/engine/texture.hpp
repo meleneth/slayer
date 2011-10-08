@@ -2,7 +2,7 @@
 #ifndef ___texture_inc
 #define ___texture_inc 1
 
-#include<list>
+#include<map>
 #include<string>
 
 #include"SDL.h"
@@ -18,13 +18,12 @@ class Texture {
     public:
         // Public data members go here.
         GLuint GLtexID;
-        TileNum tilenum;
         Uint16 width;
         Uint16 height;
 
         Texture(void);
-        Texture(int dummy, std::string filename, TileNum tilenum); // Constructor
-        int LoadImage(std::string filename);
+        Texture(int dummy, string filename); // Constructor
+        int LoadImage(string filename);
         ~Texture(); // Destructor
         int generate(void);
         void DrawGLSquare(Sint16 size);
@@ -37,9 +36,8 @@ class Texture {
         // Protected members go here.
 };
 
+extern map<string, Texture *> loaded_textures;
 
-void load_textures(int dummy);
-
-Texture *get_tex_id(TileNum tile_id);
+Texture *get_texture(string filename);
 
 #endif

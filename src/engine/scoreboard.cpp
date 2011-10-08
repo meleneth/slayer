@@ -35,7 +35,7 @@ int ScoreBoard::add(Sint16 myscore)
 int ScoreBoard::DrawDash()
 {
     Texture *texture;
-    texture = get_tex_id(TILE_DASHDOT);
+    //texture = get_tex_id(TILE_DASHDOT); //FIXME
 
     glBindTexture(GL_TEXTURE_2D, texture->GLtexID);	// Bind Our Texture
 
@@ -61,7 +61,7 @@ int ScoreBoard::DrawDash()
 int ScoreBoard::DrawDot()
 {
     Texture *texture;
-    texture = get_tex_id(TILE_DASHDOT);
+    //texture = get_tex_id(TILE_DASHDOT); //FIXME
 
     glBindTexture(GL_TEXTURE_2D, texture->GLtexID);	// Bind Our Texture
 
@@ -90,7 +90,7 @@ int ScoreBoard::DrawDigit(int digit)
     Texture *texture;
     
     digit = digit % 10;		//zapow
-    texture = get_tex_id(TILE_NUMBERS);
+    //texture = get_tex_id(TILE_NUMBERS); //FIXME
 
     glBindTexture(GL_TEXTURE_2D, texture->GLtexID);	// Bind Our Texture
 
@@ -117,7 +117,7 @@ int ScoreBoard::DrawLetter(int letter)
 {
     Texture *texture;
     
-    texture = get_tex_id(TILE_ALPHA);
+    //texture = get_tex_id(TILE_ALPHA); //FIXME
 
     glBindTexture(GL_TEXTURE_2D, texture->GLtexID);	// Bind Our Texture
 

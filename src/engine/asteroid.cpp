@@ -44,7 +44,7 @@ void Asteroid::setup_asteroid(void)
     TileNum tex_id;
     tex_id = asteroid_tile_map[(rand() %6)];
     
-    texture = get_tex_id(tex_id);
+    //texture = get_tex_id(tex_id); //FIXME
     experiance_value = 200;
     score_value = health * 4;
 }

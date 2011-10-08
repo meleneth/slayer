@@ -33,7 +33,7 @@ void Entity::setup_entity(void)
     sector = NULL;
     size=32;
     taken_damage = 0;
-    texture = get_tex_id(TILE_NOTILE);
+    //texture = get_tex_id(TILE_NOTILE); //FIXME
     health = 100;
     score_value = 0;
     experiance_value = 0;
@@ -152,7 +152,7 @@ void Entity::kill_me_now(void)
 void Entity::log_info(void){
     std::stringstream buf;
     buf << "Entity [" << ent_id << "] Info: ";
-    buf << "x: " << v->x << " y: " << v->y << " size: " << (int) size << " tid: " << (int)texture->tilenum;
+    buf << "x: " << v->x << " y: " << v->y << " size: " << (int) size;
     buf << " health: " << health;
     if(sector){
     buf << " sector: " << ((Sector *)sector)->sector_id;

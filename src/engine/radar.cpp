@@ -8,7 +8,7 @@ Radar::Radar(Area *a, Area *r) // Constructor
 {
     actual_size = a;
     rendered_size = r;
-    texture = get_tex_id(TILE_WHITE);
+    //texture = get_tex_id(TILE_WHITE); //FIXME
 }
     
 Radar::~Radar() // Destructor

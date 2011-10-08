@@ -13,7 +13,6 @@
 Renderer::Renderer(Uint32 xres, Uint32 yres)		// Constructor
 {
     board = new Video(xres, yres);
-    load_textures(0);
 }
 
 Renderer::~Renderer()		// Destructor

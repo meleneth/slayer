@@ -7,7 +7,7 @@
 Plasma::Plasma(Sint16 dmg, Vector *direction, Entity *firing_party):Projectile(dmg, direction, firing_party) // Constructor
 {
     size = 10;
-    texture = get_tex_id(TILE_BEAMW);
+    // texture = get_tex_id(TILE_BEAMW); //FIXME
     v->rotation = 5; 
 }
 
