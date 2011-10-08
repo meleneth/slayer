@@ -2,7 +2,7 @@ function ent_info(entity)
   print(entity)
 end
 
-e = Slayer.Entity()
+e = Fuego.Entity()
 print(e.v)
 v = e.v
 v.x = 20

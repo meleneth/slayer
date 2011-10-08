@@ -33,7 +33,7 @@ void Entity::setup_entity(void)
     sector = NULL;
     size=32;
     taken_damage = 0;
-    //texture = get_tex_id(TILE_NOTILE); //FIXME
+    texture = get_texture("/sprites/notex.png");
     health = 100;
     score_value = 0;
     experiance_value = 0;

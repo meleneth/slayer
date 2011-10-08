@@ -21,6 +21,7 @@ Console::Console(Uint16 x, Uint16 y) // Constructor
     
 Console::~Console() // Destructor
 {
+  log("Console end.");
 }
 
 void Console::render(void)

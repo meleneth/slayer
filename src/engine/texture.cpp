@@ -2,6 +2,9 @@
 #include "texture.hpp"
 #include"SDL_opengl.h"
 #include "glpng.h"
+#include "path_resolver.hpp"
+
+using namespace std;
 
 map<string, Texture *> loaded_textures;
 
@@ -10,7 +13,7 @@ Texture::Texture ()
 {
 }
 
-Texture::Texture (int dummy, std::string filename)	// Constructor
+Texture::Texture (int dummy, string filename)	// Constructor
 {
     if(!dummy) {
         LoadImage (filename);
@@ -21,13 +24,13 @@ Texture::~Texture ()
 {
 }
 
-int Texture::LoadImage (std::string filename)
+int Texture::LoadImage (string filename)
 {
     pngInfo tmpInfo;
-    GLtexID = pngBind (filename.c_str(), PNG_NOMIPMAPS, PNG_ALPHA, &tmpInfo, GL_CLAMP, GL_LINEAR, GL_LINEAR);
+    GLtexID = pngBind (PathResolver_texture_path(filename).c_str(), PNG_NOMIPMAPS, PNG_ALPHA, &tmpInfo, GL_CLAMP, GL_LINEAR, GL_LINEAR);
     if (GLtexID == 0)
     {
-        printf ("Error trying to load %s\n", filename.c_str());
+        printf ("Error trying to load %s\n", PathResolver_texture_path(filename).c_str());
         exit (1);
     }
     width = tmpInfo.Width/2;

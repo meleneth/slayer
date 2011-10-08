@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
   video = new Video(1024, 768);
 
   slayer = new Slayer();
+
+  slayer->run_script("/first.lua");
   slayer->main_loop();
 
   delete slayer;

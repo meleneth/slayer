@@ -25,7 +25,6 @@ class Texture {
         Texture(int dummy, string filename); // Constructor
         int LoadImage(string filename);
         ~Texture(); // Destructor
-        int generate(void);
         void DrawGLSquare(Sint16 size);
         void DrawGLSquare(Sint16 size, Vector *where);
         void DrawGL(void);

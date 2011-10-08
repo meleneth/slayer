@@ -7,6 +7,7 @@
 #include "console.hpp"
 #include "globals.hpp"
 #include "slayer.hpp"
+#include "texture.hpp"
 %}
 
 /* Parse the header file to generate wrappers */
@@ -18,4 +19,5 @@
 %include "globals.hpp"
 %include "vector.hpp"
 %include "slayer.hpp"
+%include "texture.hpp"
 

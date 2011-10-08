@@ -15,6 +15,7 @@ class Slayer {
     ~Slayer();
 
     void main_loop();
+    void run_script(string script_name);
     
     EntityMgr *background;
     EntityMgr *foreground;
@@ -22,5 +23,7 @@ class Slayer {
 
     lua_State *lua_state;
 };
+
+extern Slayer *slayer;
 
 #endif

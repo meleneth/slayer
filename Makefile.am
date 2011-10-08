@@ -15,7 +15,7 @@ bin_slayert_SOURCES = src/slayert.cpp
 
 CLEANFILES = src/engine/fuego_wrap.cxx
 
-src/engine/fuego_wrap.cxx : src/engine/fuego.i src/engine/entity.hpp src/engine/entitymgr.hpp src/engine/sector.hpp src/engine/console.hpp src/engine/globals.hpp src/engine/slayer.hpp
+src/engine/fuego_wrap.cxx : src/engine/fuego.i src/engine/entity.hpp src/engine/entitymgr.hpp src/engine/sector.hpp src/engine/console.hpp src/engine/globals.hpp src/engine/slayer.hpp src/engine/texture.hpp
 	swig -c++ -lua -o src/engine/fuego_wrap.cxx src/engine/fuego.i
 
 libs_libglpng_a_SOURCES = libs/glpng/adler32.c \

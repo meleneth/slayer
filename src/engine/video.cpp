@@ -63,10 +63,10 @@ void Video::InitGL (int bpp, int fullscreen, float gamma, Uint32 xres, Uint32 yr
     glEnable (GL_BLEND);
     glDepthFunc (GL_LEQUAL);
     glColor4f (1.0f, 1.0f, 1.0f, 1);	// Full Brightness, 50% Alpha ( NEW )
-    //        glBlendFunc(GL_SRC_ALPHA,GL_ONE);               // Blending Function For Translucency Based On Source Alpha Value ( NEW )
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE);               // Blending Function For Translucency Based On Source Alpha Value ( NEW )
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
     //glEnable(GL_SET);
-    //  glShadeModel(GL_SMOOTH);
+    glShadeModel(GL_SMOOTH);
     SDL_WM_SetCaption ("Codename: Sector 7", "s7");
 
     glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

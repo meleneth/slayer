@@ -7,10 +7,12 @@
 
 #include<entitymgr.hpp>
 #include<console.hpp>
+#include<slayer.hpp>
 
 using namespace std;
 
 Console *console;
+Slayer *slayer;
 
 void do_lua_stuff();
 
