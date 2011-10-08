@@ -25,10 +25,6 @@ Slayer::~Slayer()
   delete background;
 
   lua_close(lua_state);
-
-  if(path_resolver) {
-    delete path_resolver;
-  }
 }
 
 void Slayer::main_loop()

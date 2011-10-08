@@ -8,7 +8,6 @@
 
 #include"entity.hpp"
 #include"entitymgr.hpp"
-#include"path_resolver.hpp"
 
 class Slayer {
   public:
@@ -22,8 +21,6 @@ class Slayer {
     EntityMgr *ui;
 
     lua_State *lua_state;
-
-    PathResolver *path_resolver;
 };
 
 #endif

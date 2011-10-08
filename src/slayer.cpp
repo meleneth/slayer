@@ -17,10 +17,11 @@ int main(int argc, char *argv[])
   console = new Console();
   console->print_logs = true;
 
+  PathResolver_setup_path(argv[0]);
+
   video = new Video(1024, 768);
 
   slayer = new Slayer();
-  slayer->path_resolver = new PathResolver(argv[0]);
   slayer->main_loop();
 
   delete slayer;
