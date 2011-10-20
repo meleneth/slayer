@@ -8,6 +8,7 @@
 #include<entitymgr.hpp>
 #include<console.hpp>
 #include<slayer.hpp>
+#include<path_resolver.hpp>
 
 using namespace std;
 
@@ -32,6 +33,8 @@ int main(int argc, char *argv[])
 
   cout << "Slayer test suite 1.0"  << endl;
   cout << "Console initialized at " << console << endl;
+
+  PathResolver_setup_path(argv[0]);
 
   EntityMgr *stuff = new EntityMgr();
 

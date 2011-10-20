@@ -12,6 +12,8 @@
 
 /* Parse the header file to generate wrappers */
 %include <std_string.i>
+%include <std_map.i>
+%template(StringIntMap) std::map<string, int>;
 %include "entity.hpp"
 %include "entitymgr.hpp"
 %include "sector.hpp"

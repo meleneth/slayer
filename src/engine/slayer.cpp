@@ -39,9 +39,9 @@ void Slayer::main_loop()
     glColor4f(0.0,0.0,0.0,1.0);
     glBegin(GL_QUADS);
     glVertex3f(-1024, -1024, 0.0);
-    glVertex3f(-1024, 1024, 0.0);
-    glVertex3f(1024, 1024, 0.0);
-    glVertex3f(1024, -1024, 0.0);
+    glVertex3f(-1024,  1024, 0.0);
+    glVertex3f( 1024,  1024, 0.0);
+    glVertex3f( 1024, -1024, 0.0);
     glEnd ();			// Done Drawing The Square
     glColor4f(1.0,1.0,1.0,1.0);
 

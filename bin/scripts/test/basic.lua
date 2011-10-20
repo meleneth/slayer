@@ -10,7 +10,11 @@ v.x = 20
 print(e.v.x)
 v.y = 20
 
+e.stats:set('beuno', 4)
+
 ent_info(e)
 
-e = 0
+
+print("Moo")
+print(e.stats:get('beuno'))
 

@@ -2,6 +2,8 @@
 #ifndef ___entity_inc
 #define ___entity_inc 1
 
+#include<map>
+
 #include"SDL.h"
 #include"texture.hpp"
 #include"vector.hpp"
@@ -22,6 +24,8 @@ enum ENT_TYPE { ENT_ASTEROID, ENT_PLAYER, ENT_PLAYERSHOT };
 
 #define ALIGNMENT_ASTEROID 1
 
+using namespace std;
+
 class Weapon;
 class Entity {
     public:
@@ -39,7 +43,8 @@ class Entity {
         Weapon *primary;
         Entity *parent;
         Uint32 alignment;
-        
+
+        map<string, int> stats;
         
         void *sector;
 
